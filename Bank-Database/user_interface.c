@@ -341,10 +341,10 @@ int main(int argc, char* argv[])
                 break;
             }
         }
-        cleanup(startPointer);
         printf("\n               - Thank you for using Ace's Bank Database -\n\n");
         printf("@========================================================================@\n\n\n");
     }
+    cleanup(startPointer);
     return success;
 }
 
