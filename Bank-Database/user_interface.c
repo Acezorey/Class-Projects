@@ -20,6 +20,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 #include "record.h"
 #include "database.h"
 
@@ -148,7 +149,7 @@ int main(int argc, char* argv[])
                     strcpy(check, add);
                 }
             }
-            else if (userInput[0] == 'p')
+            else if (userInput[0] == 'p' || userInput[0] == 'P')
             {
                 if (strlen(userInput) <= strlen(printall) + 1)
                 {
@@ -156,7 +157,7 @@ int main(int argc, char* argv[])
                     strcpy(check, printall);
                 }
             }
-            else if (userInput[0] == 'f')
+            else if (userInput[0] == 'f' || userInput[0] == 'F')
             {
                 if (strlen(userInput) <= strlen(find) + 1)
                 {
@@ -164,7 +165,7 @@ int main(int argc, char* argv[])
                     strcpy(check, find);
                 }
             }
-            else if (userInput[0] == 'd')
+            else if (userInput[0] == 'd' || userInput[0] == 'D')
             {
                 if (strlen(userInput) <= strlen(delete) + 1)
                 {
@@ -172,7 +173,7 @@ int main(int argc, char* argv[])
                     strcpy(check, delete);
                 }
             }
-            else if (userInput[0] == 'q')
+            else if (userInput[0] == 'q' || userInput[0] == 'Q')
             {
                 if (strlen(userInput) <= strlen(quit) + 1)
                 {
@@ -185,7 +186,7 @@ int main(int argc, char* argv[])
             {
                 while (iterator < strlen(userInput) - 1)
                 {
-                    if (userInput[iterator] != check[iterator] && userInput[iterator] != '\n')
+                    if (tolower(userInput[iterator]) != tolower(check[iterator]) && userInput[iterator] != '\n')
                     {
                         switcher = 0;
                     }
